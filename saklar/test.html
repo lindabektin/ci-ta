@@ -1,0 +1,29 @@
+<script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>
+ini contoh
+<input type="checkbox" id="checkHere" onclick="updateCheck()">
+<!-- onclick adalah tribut yang berfungsi ketika ada interaksi berupa klik -->
+<!-- updateCheck() adalah function -->
+<script>
+    function updateCheck() { // function
+        var ck = $('#checkHere').is(':checked'); // mengambil & mengecek data checkbox
+        console.log(ck); // menampilkan status checkbox ke console hasilnya true/false
+        $.ajax({
+            // data : isi untuk mengirim data ke url
+            data: {
+                'dataCheckbox': ck
+            },
+            // type GET / POST
+            type: 'GET',
+            // url tujuan pengiriman data
+            url: 'urlphpnya.php',
+            success: function (successResult) { // jika status sukses
+                console.log(successResult) // menampilkan ke console isi urlphpnya.php
+                //olah data sukses disini
+            },
+            error: function (errorResult) { // jika status error
+                console.log(errorResult) // menampilkan ke console isi urlphpnya.php
+                //olah data error disini
+            }
+        })
+    }
+</script>
