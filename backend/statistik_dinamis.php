@@ -36,6 +36,8 @@
 		$qry4 = "SELECT count(*) as jml from aktivitas 
 				where tgl BETWEEN DATE_SUB( NOW( ) , INTERVAL 7	DAY ) AND NOW( )
 					and idsensor = 12 and aktivitas = 'menguras'"; //menguras 7 hari terakhir
+
+					
 	}else{
 		$qry = "SELECT SUM( nilai_sensor ) AS jml
 				FROM sensor_value
